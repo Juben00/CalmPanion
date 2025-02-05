@@ -28,7 +28,21 @@ const DashboardLayout = () => {
                             <h2 className='text-2xl font-semibold text-center'>About Calmpanion</h2>
                             <p className='text-md mt-2'>Welcome to Calmpanion, your AI-driven chatbot designed to enhance your everyday life through intelligent conversation and support. Powered by Gemini AI, Calmpanion is dedicated to providing thoughtful responses, insightful analysis, and helpful tools tailored to your needs.</p>
                         </section>
+                        <section>
+                            <h2 className='text-2xl font-semibold text-center'>Features</h2>
+                            <ul className='list-disc list-inside space-y-2'>
+                                <li>Personalized conversations</li>
+                                <li>Emotional support and guidance</li>
+                                <li>Goal setting and tracking</li>
+                                <li>Relaxation techniques and meditation</li>
+                                <li>AI-driven insights and analysis</li>
 
+                            </ul>
+                        </section>
+                        <section>
+                            <h2 className='text-2xl font-semibold text-center'>Get Started</h2>
+                            <p className='text-md mt-2'>Enter a message to start your conversation with Calmpanion. We look forward to helping you on your journey to mental wellness!</p>
+                        </section>
 
                     </div>
                 </div >

@@ -9,6 +9,7 @@ export default function Home() {
         <div className="flex flex-col items-center justify-center h-screen">
           <h1 className="text-4xl font-bold">Welcome to CalmPanion</h1>
           <p className="text-lg mt-4">Your AI Mental Health Companion App</p>
+          <p className="text-sm">Created By: <span className="text-red-500">Kleo</span></p>
           <div className="mt-8">
             <Link href={'/dashboard'}>
               <Button>Get Started</Button>
