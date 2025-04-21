@@ -33,7 +33,8 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
             {children}
             <button
                 onClick={toggleTheme}
-                className="fixed bottom-4 left-4 p-2 rounded-full bg-primary text-primary-foreground"
+                className="fixed top-20 right-4 rounded-full bg-primary text-primary-foreground"
+                aria-label={theme === "light" ? "Switch to dark mode" : "Switch to light mode"}
             >
                 {theme === "light" ? "🌙" : "☀️"}
             </button>

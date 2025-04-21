@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { GoogleGenerativeAI } from '@google/generative-ai';
+import { Button } from '../components/ui/button';
 
 type Message = {
     role: 'user' | 'model';
@@ -74,22 +75,22 @@ export function Chat() {
     }
 
     return (
-        <div className="rounded-lg  p-6 pt-24 flex flex-col h-full">
-            <div className="overflow-y-auto mb-4 space-y-4 flex-1  ">
+        <div className="rounded-lg p-4 md:p-6 pt-16 md:pt-24 flex flex-col h-full">
+            <div className="overflow-y-auto mb-4 space-y-4 flex-1">
                 {messages.map((message, index) => (
                     <div
                         key={index}
-                        className={`p-4 rounded-lg ${message.role === 'user'
-                            ? 'bg-neutral-100 ml-auto max-w-[80%]'
-                            : 'bg-gray-100 mr-auto max-w-[80%]'
+                        className={`p-3 md:p-4 rounded-lg ${message.role === 'user'
+                            ? 'bg-neutral-100 ml-auto max-w-[90%] md:max-w-[80%]'
+                            : 'bg-gray-100 mr-auto max-w-[90%] md:max-w-[80%]'
                             }`}
                     >
-                        <p className="text-gray-800">{message.content}</p>
+                        <p className="text-sm md:text-base text-gray-800">{message.content}</p>
                     </div>
                 ))}
                 {isLoading && (
-                    <div className="bg-gray-100 rounded-lg p-4 mr-auto max-w-[80%]">
-                        <p className="text-gray-600">Thinking...</p>
+                    <div className="bg-gray-100 rounded-lg p-3 md:p-4 mr-auto max-w-[90%] md:max-w-[80%]">
+                        <p className="text-sm md:text-base text-gray-600">Thinking...</p>
                     </div>
                 )}
             </div>
@@ -100,16 +101,12 @@ export function Chat() {
                     value={input}
                     onChange={(e) => setInput(e.target.value)}
                     placeholder="Type your message here..."
-                    className="flex-1 bg-transparent p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-neutral-500"
+                    className="flex-1 bg-transparent p-2 text-sm md:text-base border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-neutral-500"
                     disabled={isLoading}
                 />
-                <button
-                    type="submit"
-                    disabled={isLoading}
-                    className="text-white bg-neutral-950 px-4 py-2 rounded-lg hover:bg-neutral-600 disabled:opacity-50"
-                >
-                    Send
-                </button>
+                <Button type="submit" variant={'outline'} disabled={isLoading} size={'lg'} className="  p-2 rounded-lg">
+                    {isLoading ? 'Sending...' : 'Send'}
+                </Button>
             </form>
         </div>
     );

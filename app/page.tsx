@@ -10,24 +10,21 @@ export default function Home() {
 
   return (
     <>
-      <div>
-        <div className="flex flex-col items-center justify-center h-screen">
-          <Image
-            src={theme === "dark" ? "/images/JA white.png" : "/images/JA black.png"}
-            alt="Logo"
-            width={200}
-            height={200}
-            className="mb-8"
-          />
-          <h1 className="text-4xl font-bold">Welcome to CalmPanion</h1>
-          <p className="text-lg mt-4">Your AI Mental Health Companion App</p>
-          <p className="text-sm">Created By: <span className="text-red-500">Kleo</span></p>
-          <div className="mt-8">
-            <Link href={'/dashboard'}>
-              <Button>Get Started</Button>
-            </Link>
-          </div>
-        </div>
+      <Image
+        src={theme === "dark" ? "/images/JA white.png" : "/images/JA black.png"}
+        alt="Logo"
+        width={200}
+        height={200}
+        className="mb-6 md:mb-8 w-[150px] h-auto md:w-[200px]"
+        priority
+      />
+      <h1 className="text-3xl md:text-4xl font-bold text-center">Welcome to CalmPanion</h1>
+      <p className="text-base md:text-lg mt-3 md:mt-4 text-center">Your AI Mental Health Companion App</p>
+      <p className="text-xs md:text-sm mt-2">Created By: <span className="text-red-500">Kleo</span></p>
+      <div className="mt-6 md:mt-8 w-full max-w-xs">
+        <Link href={'/dashboard'} className="w-full">
+          <Button className="w-full py-3 text-base">Get Started</Button>
+        </Link>
       </div>
     </>
   );
